@@ -1,6 +1,8 @@
+'use client'
 import React from "react";
 import Image from "next/image";
-
+import { TypeAnimation } from 'react-type-animation';
+   
 const HeroSection = () => {
   return (
     <section>
@@ -9,7 +11,24 @@ const HeroSection = () => {
           <h1 className="text-white mb-4 sm:text-5xl lg:font-extrabold text-6xl">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600 ">Hello I am {" "} 
             </span>
-             Ahmed
+            <TypeAnimation
+      sequence={[
+        // Same substring at the start will only be typed out once, initially
+        'Ahmed',
+        1000, // wait 1s before replacing "Mice" with "Hamsters"
+        'Web Developer',
+        1000,
+        'Web Designer',
+        1000,
+        'Graphic Designer',
+        1000
+      ]}
+      wrapper="span"
+      speed={1}
+      style={{ fontSize: '1em', display: 'inline-block' }}
+      repeat={Infinity}
+    />
+
           </h1>
           <p className="text-[#ADB7BE] text-base mb-6 sm:text-lg lg:text-xl">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius quae
